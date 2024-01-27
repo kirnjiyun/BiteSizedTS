@@ -1,0 +1,16 @@
+{
+    "name": "section8(타입 조작하기)",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@types/node": "^20.11.3",
+        "undici-types": "^6.4.0"
+    }
+}
