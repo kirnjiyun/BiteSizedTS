@@ -63,6 +63,7 @@ type Thumbnail1 = {
 };
 
 type Thumbnail2 = Record<"large" | "medium" | "small", { url: string }>;
+//위랑 아래랑 똑같은거임
 
 type Record<K extends keyof any, V> = {
     [key in K]: V;
