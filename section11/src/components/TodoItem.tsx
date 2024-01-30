@@ -12,7 +12,7 @@ export default function TodoItem(props: Props) {
 
     return (
         <div>
-            {props.id}번 : {props.content}
+            {props.index + 1}번 : {props.content} id:{props.id}
             <button onClick={onClickButton}>삭제하기</button>
         </div>
     );

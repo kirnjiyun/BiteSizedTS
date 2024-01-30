@@ -10,6 +10,7 @@ type Action =
           data: {
               id: number;
               content: string;
+              index: number;
           };
       }
     | {
@@ -52,7 +53,7 @@ function App() {
     const onClickAdd = (text: string) => {
         dispatch({
             type: "CREATE",
-            data: { id: idRef.current++, content: text },
+            data: { id: idRef.current++, content: text, index: todos.length },
         });
     };
 
@@ -77,9 +78,16 @@ function App() {
                     <Editor></Editor>
                     <div>
                         <div>
-                            {todos.map((todo) => (
-                                <TodoItem key={todo.id} {...todo} />
-                            ))}
+                            {todos.map((todo, i) => {
+                                const { index, ...rest } = todo;
+                                return (
+                                    <TodoItem
+                                        key={todo.id}
+                                        index={i}
+                                        {...rest}
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
                 </TodoDispatchContext.Provider>
